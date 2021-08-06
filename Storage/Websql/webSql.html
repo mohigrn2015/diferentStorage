@@ -1,0 +1,84 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <title>SQL WEB APPLICATION</title>       
+        <link rel="stylesheet" type="text/css" href="content/style.css">
+    </head>  
+    <body>  
+        <div class="container">
+            <h2 class="head">EMPLOYEE INFORMATION</h2>
+            <p id="hh"></p>  
+            <form id="frm1">  
+                <table class="tbl_box" id="tblinsert">
+                    <tr>  
+                        <td class="td_color">Employee ID:</td>  
+                        <td id="tdorginal"><input  type="text" id="tbID" /></td>  
+                        <td id="tdid" style="display:none">  
+                            <select id="ddlid" onchange="myFunction()"></select>  
+                        </td>  
+                    </tr>  
+                    <tr id="rowName">  
+                        <td class="td_color">Employe Name:</td>  
+                        <td><input type="text" id="tbName" /></td>  
+        
+                    </tr>  
+                    <tr id="rowLocation">  
+                        <td class="td_color">Email:</td>  
+                        <td><input  type="text" id="tbLocation" /></td>  
+                    </tr>  
+        
+                    <tr id="rowdept">  
+                        <td class="td_color">Section:</td>  
+                        <td>  
+                            <select class="tbl_lst" id="tbLdept"></select>  
+                        </td>  
+                    </tr>  
+                    <tr id="rowLocation">  
+                        <td class="td_color">Image Upload:</td>  
+                        <td><input type='file' id="image" onchange="readURL(this);" /></td>  
+                    </tr>  
+        
+                </table>  
+
+                <div class="left">
+                    <img id="blah" src="#" alt="" /><br>
+                </div>
+            </form>  
+            <br />  
+            <button class="btn" id="btnInsert" onclick="Insert()">Submit</button>  
+            <button id="btnupdate" onclick="updte()">Update</button>  
+            <button id="btndel" onclick="del()">Delete</button>           
+            
+            <br /><br />  
+            <button id="btnupdateshw" onclick="showupdte()">Update Employee</button>  
+            <button id="btndeleteshw" onclick="showdel()">Delete Employee</button>  
+            <button id="btninsertshw" onclick="showin()">Save Employee</button>  
+            <br /><br /> 
+        
+
+            <table class="tbl" id="tblGrid" cellpadding="7px" cellspacing="0" border="1">  
+                <tr style="background-color:#a826e4;color:#eee;font-size:15px;">  
+                    <td >  
+                        Employee ID  
+                    </td>  
+                    <td >  
+                    Employee Name  
+                    </td>  
+                    <td >  
+                        Email
+                    </td>  
+                    <td >  
+                        Section 
+                    </td> 
+                    <td >  
+                        Image  
+                    </td>  
+                </tr>  
+            </table>  
+            <br />  
+        </div>
+        <script src="Scripts/jquery-3.5.1.js"></script>        
+        <script src="Scripts/webSql.js" type="text/javascript"></script>
+
+    </body>  
+</html>  

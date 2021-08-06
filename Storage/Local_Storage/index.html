@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Registration Application</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>  
+<header>
+<nav class="navbar navbar-inverse">
+<div class="container">
+<div class="navbar-header">
+	<h2 style="text-align: center; color: #fffbfb; font-variant: small-caps;">Welcome New Passanger</h2>
+</div>
+</div>
+</nav>
+</header>
+<section class="passanger-aria">
+<div class="container">
+<div class="row">
+<div class="col-lg-6 col-md-6">
+<div class="passangerAdd-box">
+<h2 id="headStatus">Add Passanger</h2>
+<div class="col-md-8">
+<div class="form-group">
+	<ul class="passangerField-list">
+		<li><label>Name:</label></li>
+		<li><input type="text" id="passangerName" name="passangerName"  placeholder="Name" required="required" /></li>
+	</ul>
+</div>
+<div class="form-group">
+	<ul class="passangerField-list">
+		<li><label>Ticket SL:</label></li>
+		<li><input type="text" id="passangerSL" name="passangerSL"  placeholder="eg.1238782" required="required" /></li>
+	</ul>
+</div>
+<div class="form-group">
+	<ul class="passangerField-list">
+		<li><label>Contact No:</label></li>
+		<li><input type="text" id="PsContact" name="PsContact"  placeholder="eg.000000000" required="required" /></li>
+	</ul>
+</div>
+<div class="form-group">
+	<ul class="passangerField-list">
+		<li><label>Email:</label></li>
+		<li><input type="text" id="PsEmail" name="PsEmail"  placeholder="mail@mail.com" /></li>
+	</ul>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="show-image">
+<img id="holdImg" src="images/placeholder.png" class="img-responsive" alt="" />
+</div>
+<div class="getImage-box">
+<input type="file" style="padding:0;" accept="image/x-png,image/gif,image/jpeg,video/*" name="prImage" id="prImage" />
+<div class="getImg-status">	Attach File	</div>
+</div>
+</div>
+<div class="form-group">
+<ul class="passangerField-list">
+<li>&nbsp;</li>
+<li><button id="addBtn" class="btn btn-success addBtn">Add Passanger</button></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-6">
+<div class="showPassanger-table">
+<table id="passangerTable" class="table table-responsive table-bordered">
+
+</table>
+<button id="clearBtn" class="btn btn-danger">All Clear</button>
+</div>
+</div>
+</div>
+</div>
+</section>  
+	
+	<script src="js/jquery-3.5.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

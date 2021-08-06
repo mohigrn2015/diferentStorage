@@ -1,0 +1,490 @@
+/*Base font*/
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap");
+/*================================== all pages variable  ================================*/
+/*==================================  mixin  ================================*/
+/*==================================  global  ================================*/
+body {
+  font-family: "Source Sans Pro", sans-serif; }
+
+p {
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 25px;
+  font-size: 16px;
+  color: #494d59;
+  font-weight: 400; }
+
+.primary_Btn {
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  background: #6934ff;
+  border: 1px solid #6934ff;
+  -webkit-box-shadow: 0px 25px 88.35px 6.65px rgba(27, 33, 47, 0.15);
+  box-shadow: 0px 25px 88.35px 6.65px rgba(27, 33, 47, 0.15);
+  border-radius: 25px;
+  line-height: 26px;
+  text-transform: uppercase;
+  padding: 12px 27px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  min-width: 160px;
+  outline: none;
+  text-align: center; }
+  .primary_Btn:hover {
+    text-decoration: none;
+    color: #6934ff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: transparent; }
+
+.secondary_Btn {
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid #fff;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 25px;
+  line-height: 26px;
+  text-transform: uppercase;
+  padding: 12px 21px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  outline: none; }
+  .secondary_Btn:hover {
+    text-decoration: none;
+    color: #fff; }
+
+    .pri_cusmp {
+      margin-right: 8px;
+    }
+    .pri_cusmp:last-child {
+      margin-right: 0px;
+    }
+/*================================== preloader css  ================================*/
+.Appily-preloader {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: center;
+  display: -webkit-box;
+  display: flex;
+  display: -ms-flexbox;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  background: #fff; }
+
+.Appily-preloader .anim-preloader {
+  position: absolute;
+  z-index: 100; }
+
+/* Spinner */
+.Appily-preloader .anim-preloader .spinner {
+  -webkit-animation: spinner 1s infinite linear;
+  animation: spinner 1s infinite linear;
+  border-radius: 50%;
+  border: 3px solid #f0545f;
+  border-top-color: #6934ff;
+  height: 100px;
+  margin: 0 auto 45px auto;
+  width: 100px; }
+
+/* Text */
+.Appily-preloader .anim-preloader .txt-loading {
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.Appily-preloader .anim-preloader .txt-loading .letters-loading:before {
+  -webkit-animation: letters-loading 4s infinite;
+  animation: letters-loading 4s infinite;
+  color: #6934ff;
+  content: attr(data-text-preloader);
+  left: 0;
+  opacity: 0;
+  top: 0;
+  line-height: 70px;
+  position: absolute; }
+
+.Appily-preloader .anim-preloader .txt-loading .letters-loading {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  letter-spacing: 15px;
+  display: inline-block;
+  color: #1b212f;
+  position: relative;
+  font-size: 70px;
+  line-height: 70px; }
+
+.Appily-preloader .anim-preloader .txt-loading .letters-loading:nth-child(2):before {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s; }
+
+.Appily-preloader .anim-preloader .txt-loading .letters-loading:nth-child(3):before {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s; }
+
+.Appily-preloader .anim-preloader .txt-loading .letters-loading:nth-child(4):before {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s; }
+
+.Appily-preloader .anim-preloader .txt-loading .letters-loading:nth-child(5):before {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s; }
+
+.Appily-preloader .anim-preloader .txt-loading .letters-loading:nth-child(6):before {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s; }
+
+.Appily-preloader .anim-preloader .txt-loading .letters-loading:nth-child(7):before {
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s; }
+
+.Appily-preloader .loader-section {
+  background-color: #ffffff;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: calc(50% + 1px); }
+
+.loaded .anim-preloader {
+  opacity: 0;
+  -webkit-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out; }
+
+/*================================== preloader keyframes  ================================*/
+@-webkit-keyframes spinner {
+  to {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg); } }
+@keyframes spinner {
+  to {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg); } }
+
+@-webkit-keyframes letters-loading {
+  0%,
+  75%,
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg); }
+  25%,
+  50% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg); } }
+
+@keyframes letters-loading {
+  0%,
+  75%,
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg); }
+  25%,
+  50% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg); } }
+
+@media screen and (max-width: 767px) {
+  .Appily-preloader .anim-preloader .spinner {
+    height: 7em;
+    width: 7em; } }
+
+@media screen and (max-width: 500px) {
+  .Appily-preloader .anim-preloader .spinner {
+    height: 5em;
+    width: 5em; }
+  .Appily-preloader .anim-preloader .txt-loading .letters-loading {
+    font-size: 40px;
+    letter-spacing: 10px; } }
+
+/*==================================  typographic  ================================*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100%;
+  width: 100%; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+button {
+  outline: none;
+  border: none; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0; }
+
+.mb_20 {
+  margin-bottom: 20px; }
+
+.mb_25 {
+  margin-bottom: 25px; }
+
+.mb_30 {
+  margin-bottom: 30px; }
+
+.mb_35 {
+  margin-bottom: 35px; }
+
+.mb_55 {
+  margin-bottom: 55px; }
+
+.mb_60 {
+  margin-bottom: 60px; }
+
+.mb_65 {
+  margin-bottom: 65px; }
+
+.mt_65 {
+  margin-top: 60px; }
+
+/*========================================        Appily-header               =========================================*/
+.Appily_header {
+  padding: 30px 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
+  .Appily_header .header_nav {
+    padding: 0;
+    outline: none; }
+    .Appily_header .header_nav .logo img {
+      max-width: 80px;
+      width: 100%; }
+      .Appily_header .header_nav .logo img + img {
+        display: none; }
+    .Appily_header .header_nav .hamburger_Btn {
+      padding: 0;
+      outline: none; }
+      .Appily_header .header_nav .hamburger_Btn .bar_icon {
+        width: 30px;
+        height: 16px;
+        position: relative;
+        display: inline-block; }
+        .Appily_header .header_nav .hamburger_Btn .bar_icon .bar {
+          position: absolute;
+          width: 100%;
+          background: #1b00ff;
+          height: 2px;
+          left: 0;
+          -webkit-transition: all 0.5s;
+          -o-transition: all 0.5s;
+          transition: all 0.5s; }
+          .Appily_header .header_nav .hamburger_Btn .bar_icon .bar.bar_1 {
+            top: 0; }
+          .Appily_header .header_nav .hamburger_Btn .bar_icon .bar.bar_2 {
+            top: 50%; }
+          .Appily_header .header_nav .hamburger_Btn .bar_icon .bar.bar_3 {
+            top: 100%; }
+      .Appily_header .header_nav .hamburger_Btn[aria-expanded="true"] .bar.bar_1 {
+        top: 50%;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg); }
+      .Appily_header .header_nav .hamburger_Btn[aria-expanded="true"] .bar.bar_2 {
+        opacity: 0; }
+      .Appily_header .header_nav .hamburger_Btn[aria-expanded="true"] .bar.bar_3 {
+        top: 50%;
+        -webkit-transform: rotate(-45deg) translateY(-50%);
+        -ms-transform: rotate(-45deg) translateY(-50%);
+        transform: rotate(-45deg) translateY(-50%); }
+    .Appily_header .header_nav .Appily_header_menu ul {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .Appily_header .header_nav .Appily_header_menu ul li.nav-item {
+        margin-left: 50px; }
+        .Appily_header .header_nav .Appily_header_menu ul li.nav-item a.nav-link {
+          padding: 0;
+          color: #fff;
+          font-family: "Source Sans Pro", sans-serif;
+          font-weight: 400;
+          line-height: 30px;
+          -webkit-transition: all 0.5s;
+          -o-transition: all 0.5s;
+          transition: all 0.5s;
+          position: relative; }
+          .Appily_header .header_nav .Appily_header_menu ul li.nav-item a.nav-link::before {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            height: 1px;
+            right: 0;
+            width: 0;
+            opacity: 0;
+            -webkit-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            background: #fff; }
+          .Appily_header .header_nav .Appily_header_menu ul li.nav-item a.nav-link:hover::before {
+            width: 100%;
+            opacity: 1;
+            left: 0;
+            right: auto; }
+          .Appily_header .header_nav .Appily_header_menu ul li.nav-item a.nav-link.dropdown-toggle::after {
+            position: absolute;
+            content: "\33";
+            right: -17px;
+            top: 0;
+            font-family: "eleganticons";
+            border: none;
+            padding: 0; }
+        .Appily_header .header_nav .Appily_header_menu ul li.nav-item:first-child {
+          margin-left: 0; }
+        .Appily_header .header_nav .Appily_header_menu ul li.nav-item.active a.nav-link::before {
+          width: 100%;
+          opacity: 1;
+          left: 0;
+          right: auto; }
+    .Appily_header .header_nav .GetNbtn {
+      margin-left: 40px; }
+      .Appily_header .header_nav .GetNbtn a.primary_Btn:hover {
+        color: #fff;
+        border: 1px solid #fff; }
+  .Appily_header.Appily_header_transparent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; }
+    .Appily_header.Appily_header_transparent.fixedMenu {
+      padding: 25px 0;
+      background: #fff;
+      -webkit-box-shadow: 0px 4px 6px 0px rgba(12, 0, 46, 0.06);
+      box-shadow: 0px 4px 6px 0px rgba(12, 0, 46, 0.06);
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s; }
+      .Appily_header.Appily_header_transparent.fixedMenu .header_nav .logo img {
+        display: none; }
+        .Appily_header.Appily_header_transparent.fixedMenu .header_nav .logo img + img {
+          display: block; }
+      .Appily_header.Appily_header_transparent.fixedMenu .header_nav .Appily_header_menu ul li.nav-item a.nav-link {
+        color: #000; }
+        .Appily_header.Appily_header_transparent.fixedMenu .header_nav .Appily_header_menu ul li.nav-item a.nav-link:hover {
+          color: #6934ff; }
+      .Appily_header.Appily_header_transparent.fixedMenu .header_nav .GetNbtn {
+        margin-left: 40px; }
+        .Appily_header.Appily_header_transparent.fixedMenu .header_nav .GetNbtn a.primary_Btn:hover {
+          color: #494d59;
+          border: 1px solid #6934ff; }
+
+/*================================== home banner page 1  ================================*/
+.banner_Header {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  background: #6934ff url("../image/banner/bg.jpg") no-repeat scroll center 0/cover; }
+  .banner_Header .height_vh {
+    height: 100vh; }
+  .banner_Header .left_slide_content .banner_head_title {
+    font-size: 48px;
+    color: #fff;
+    font-weight: 700;
+    font-family: "Source Sans Pro", sans-serif;
+    line-height: 64px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    max-width: 525px; }
+  .banner_Header .left_slide_content .banner_Pra.all_Pra {
+    font-family: "Source Sans Pro", sans-serif;
+    line-height: 25px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 65px;
+    max-width: 700px; }
+  .banner_Header .left_slide_content .primary_Btn.app_btn_primary:hover {
+    color: #fff;
+    border: 1px solid #fff; }
+  .banner_Header .left_slide_content .secondary_Btn.slide_btn {
+    margin-left: 20px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    padding: 12px 31px; }
+    .banner_Header .left_slide_content .secondary_Btn.slide_btn:hover {
+      background: #6934ff;
+      -webkit-box-shadow: 0px 25px 88.35px 6.65px rgba(27, 33, 47, 0.15);
+      box-shadow: 0px 25px 88.35px 6.65px rgba(27, 33, 47, 0.15);
+      border: 1px solid #6934ff; }
+  .banner_Header .right_Slider_bar {
+    position: absolute;
+    bottom: 0; }
+
+.Appily_footer_social {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%); }
+
+.Appily_footer_social ul li {
+  display: block;
+  margin-bottom: 15px; }
+
+.Appily_footer_social ul li a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  border: 1px solid #fff;
+  line-height: 14px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: table-cell;
+  padding: 8px;
+  vertical-align: middle;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
+
+.Appily_footer_social ul li a:hover {
+  background: #fff;
+  color: #6934ff; }

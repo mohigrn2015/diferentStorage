@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Registration Application</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>  
+<header>
+<nav class="navbar navbar-inverse" style=" padding: 0;margin-bottom: 0;">
+<div class="container">
+<div class="navbar-header">
+	<h2 style="text-align: center; color: black; font-variant: small-caps;">New Patient Record</h2>
+</div>
+</div>
+</nav>
+</header>
+<section class="Patient-aria">
+<div class="container">
+<div class="row">
+<div class="col-lg-6 col-md-6">
+<div class="PatientAdd-box">
+<h2 id="headStatus">Add Patient</h2>
+<div class="col-md-8">
+<div class="form-group">
+	<ul class="PatientField-list">
+		<li><label>Name:</label></li>
+		<li><input type="text" id="PatientName" name="PatientName"  placeholder="Name" required="required" /></li>
+	</ul>
+</div>
+<div class="form-group">
+	<ul class="PatientField-list">
+		<li><label>Sl Number:</label></li>
+		<li><input type="text" id="PatientSL" name="PatientSL"  placeholder="eg.1238782" required="required" /></li>
+	</ul>
+</div>
+<div class="form-group">
+	<ul class="PatientField-list">
+		<li><label>Cabin No:</label></li>
+		<li><input type="text" id="PsCabin" name="PsCabin"  placeholder="eg.123" required="required" /></li>
+	</ul>
+</div>
+<div class="form-group">
+	<ul class="PatientField-list">
+		<li><label>Contact No:</label></li>
+		<li><input type="text" id="PsContact" name="PsContact"  placeholder="eg.000000000" required="required" /></li>
+	</ul>
+</div>
+
+<div class="form-group">
+	<ul class="PatientField-list">
+		<li><label>Email:</label></li>
+		<li><input type="text" id="PsEmail" name="PsEmail"  placeholder="mail@mail.com" /></li>
+	</ul>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="show-image">
+<img id="holdImg" src="images/placeholder.png" class="img-responsive" alt="" />
+</div>
+<div class="getImage-box">
+<input type="file" style="padding:0;" accept="image/x-png,image/gif,image/jpeg,video/*" name="prImage" id="prImage" />
+<div class="getImg-status">	Attach File	</div>
+</div>
+</div>
+<div class="form-group">
+<ul class="PatientField-list">
+<li>&nbsp;</li>
+<li><button id="addBtn" class="btn btn-success addBtn">Add Patient</button></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-6">
+<div class="showPatient-table">
+<table id="PatientTable" class="table table-responsive table-bordered">
+
+</table>
+<button id="clearBtn" class="btn btn-danger">All Clear</button>
+</div>
+</div>
+</div>
+</div>
+</section>  
+	
+	<script src="js/jquery-3.5.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

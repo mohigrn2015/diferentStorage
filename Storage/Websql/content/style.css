@@ -1,0 +1,102 @@
+    body{
+        background-color: #E7E7E7;
+    }
+    .container{
+        margin: 0 auto;
+        width: 500px;
+        border: 2px solid #ddd;
+        padding: 20px 20px 30px 30px;
+        background-color: rgb(176, 243, 217);
+       
+    }
+    .tbl{
+        width: 100%;
+    }
+    .tbl_lst{
+        width: 300px;
+        padding: 5px;
+    }
+
+    .tbl_box tr td input{
+        width: 100%;
+        padding: 5px;
+    }
+.btn{
+    margin-left: 300px;
+    padding: 3px 20px;
+}
+
+img{
+    margin-left: 30px;
+  max-width:150px;
+}
+input[type=file]{
+padding:10px;
+background:#666;
+}
+
+.left{
+    padding-left: 105px;
+}
+.head{
+    color: #555;
+    text-align: center;
+}
+
+.td_color{
+    color:black;
+}
+#btnInsert{
+    background:green;
+    color:#fff; ;
+     padding: 7px 20px;
+     border: 0;
+}
+#btnInsert:hover{
+    background:rgb(53, 95, 53);
+    color:black;
+    border-radius:3px;
+     padding: 7px 20px;
+     border: 0;
+    
+}
+
+#btnupdate{
+    background:#18A05E;
+    color:#fff;
+    display:none;
+    padding:7px 15px;
+    border: 0;
+    border-radius:3px;
+}
+#btndel{
+    background:red;
+    color:#fff;
+    display:none;
+    padding:7px 15px;
+     border: 0;
+     border-radius:3px;
+}
+
+#btnupdateshw{
+    background:#18A05E;
+    color:#fff;
+    padding:7px 15px;
+    border: 0;
+    border-radius:3px;
+}
+#btndeleteshw{
+    background:red;
+    color:#fff;
+    padding:7px 15px; 
+    border: 0;
+    border-radius:3px;
+}
+#btninsertshw{
+    background:#800020;
+    color:#fff;
+    display:none;
+    padding:7px 15px;
+    border: 0;
+    border-radius:3px;
+}

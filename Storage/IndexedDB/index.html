@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IndexedDB Application</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <h2 style="text-align: center; color: #fffbfb; font-variant: small-caps;">IndexedDB CRUD Operation</h2>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="product-aria">
+    <div class="container">
+      <div class="row">
+       <div class="col-lg-6 col-md-6">
+<div class="productAdd-box">
+    <h2 id="headStatus">Add Information</h2>
+    <div class="col-md-8">
+        <div class="form-group">
+            <ul class="proField-list">
+                <li><label>First Name:</label></li>
+                <li><input type="text" name="rollno" id="firstName" class="form-control product-field" placeholder="Enter First Name" required="required" /></li>
+            </ul>
+        </div>
+        <div class="form-group">
+            <ul class="proField-list">
+                <li><label>Last Name:</label></li>
+                <li><input type="text" name="name" id="lastName" class="form-control product-field" placeholder="Enter Last Name" required="required" /></li>
+            </ul>
+        </div>
+        <div class="form-group">
+            <ul class="proField-list">
+                <li><label>Email :</label></li>
+                <li><input type="text" name="name" id="city" class="form-control product-field" placeholder="Enter Email Address" required="required" /></li>
+            </ul>
+        </div>
+        <div class="form-group">
+            <ul class="proField-list">
+                <li><label>Mobile No:</label></li>
+                <li><input type="text" name="name" id="mobile" class="form-control product-des" placeholder="Enter Mobile No" /></li>
+            </ul>
+        </div>
+    </div>
+
+            <div class="col-md-4">
+                <div class="show-image">
+                    <img id="holdImg" src="images/placeholder.png" class="img-responsive" alt="" />
+                </div>
+                <div class="getImage-box">
+                    <input type="file" accept="image/x-png,image/gif,image/jpeg" name="prImage" id="prImage" />
+                    <div class="getImg-status">	+ add image	</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <ul class="proField-list">
+                    <li>&nbsp;</li>
+                    <li>
+                        <input type="button" name="addBtn" value="Add" id="addBtn" class="btn btn-info" style="width:80px; height:auto" />&nbsp;
+                        <input type="button" name="updateBtn" value="Update" id="updateBtn" class="btn btn-primary" style="width:80px; height:auto" />&nbsp;
+                        <input type="button" name="deleteBtn" value="Delete" id="deleteBtn" class="btn btn-danger" style="width:80px; height:auto" />&nbsp;
+                                    
+                    </li>
+                </ul>
+            </div>
+            <hr />
+            <br /><br />
+            <div class="form-group">
+
+                <table class="table table-bordered table-striped">
+                    <tr>
+                        <!--<td>Enter ID</td>-->
+                        <td>
+                            <b>Enter ID for Edit/Delete</b> 
+                            <br />
+                            <input type="text" id="txtSearch" class="form-control product-des" placeholder="Enter ID" />
+                            <input type="button" name="btnShow" value="Show" id="btnShow" class="btn btn-primary" style="width:80px; height:auto" />
+                            <input type="button" name="btnShow" value="ShowAll" id="btnShowAll" class="btn btn-info" style="width:80px; height:auto" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6">
+        <div class="showProduct-table">                      
+            <div id="datalist"></div>
+            
+        </div>
+    </div>
+</div>
+     </div>
+    </section>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/IndexedDB-getAll-shim.js"></script>
+    <script src="js/custom2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            debugger;
+            var request, db;
+            $('#prImage').on('change', bindImage);
+            // Code for declare database and check browser capibility
+            if (!window.indexedDB) {
+                console.log("Your Browser does not support IndexedDB");
+            }
+            else {
+                request = window.indexedDB.open("myTestDB", 25);
+                request.onerror = function (event) {
+                    console.log("Error opening DB", event);
+                }
+                request.onupgradeneeded = function (event) {
+                    console.log("Upgrading");
+                    db = event.target.result;
+                    var objectStore = db.createObjectStore("students", { keyPath: "rollNo", autoIncrement: true });
+                }
+                request.onsuccess = function (event) {
+                    console.log("Success opening DB");
+                    db = event.target.result;
+                    showAllDataMethod();
+                }
+            }
+            // Code for Read Data from Indexed on for edit(Single Record)
+            $('#btnShow').click(function () {
+                debugger;
+                var id = parseInt($('#txtSearch').val());
+                var request = db.transaction(["students"], "readonly").objectStore("students").get(id);
+                request.onsuccess = function (event) {
+                    var r = request.result;
+                    console.log(r);
+                    if (r != null) {
+                        $('#firstName').val(r.FirstName);
+                        $('#lastName').val(r.LastName);
+                        $('#city').val(r.City);
+                        $('#mobile').val(r.Mobile);
+                        $('#holdImg').attr('src', r.File);
+                    } else {
+                        ClearTextBox();
+                        alert('Record Does not exist');
+                    }
+
+                };
+            });
+
+            // Code for Clear text Box
+            $('#clearBtn').click(function () {
+                ClearTextBox();
+
+            });
+            function ClearTextBox() {
+                $('#firstName').val('');
+                $('#lastName').val('');
+                $('#city').val('');
+                $('#mobile').val('');
+                $('#txtSearch').val('');
+                $('#holdImg').attr('src', 'images/placeholder.png');
+            }
+            // Code for Update record on IndexedDB
+            $('#updateBtn').click(function () {
+
+                var rollNo = parseInt($('#txtSearch').val());
+                var firstName = $('#firstName').val();
+                var lastName = $('#lastName').val();
+                var city = $('#city').val();
+                var mobile = $('#mobile').val();
+                var img = new Image();
+                img.src = $('#holdImg').attr('src');
+                var image = img.src;
+                var transaction = db.transaction(["students"], "readwrite");
+                var objectStore = transaction.objectStore("students");
+                var request = objectStore.get(rollNo);
+                request.onsuccess = function (event) {
+
+                    request.result.FirstName = firstName;
+                    request.result.LastName = lastName;
+                    request.result.City = city;
+                    request.result.Mobile = mobile;
+                    request.result.File = image;
+                    objectStore.put(request.result);
+                    alert('Recored Updated Successfully !!!');
+                    showAllDataMethod();
+                    ClearTextBox();
+                };
+            });
+            //Code for Deleting record from indexedDB
+            $('#deleteBtn').click(function () {
+                var id = parseInt($('#txtSearch').val());
+                db.transaction(["students"], "readwrite").objectStore("students").delete(id);
+                alert(' Recored No. ' + id + ' Deleted Successfully !!!');
+                showAllDataMethod();
+                ClearTextBox();
+            });
+            $('#btnShowAll').click(function () {
+                //Calling funtin for show all data from IndexedDB
+                showAllDataMethod();
+            });
+
+            $('#btnShowAll').click(function () {
+                init()
+            });
+            function init() {
+                $('#pictureTest').on('change', bindImage);
+                $('#addBtn').on('click', function (e) {
+                    e.preventDefault();
+                    ns.save();
+                });
+                $('#clearBtn').on('click', ns.clearProduct);
+                ns.display();
+            }
+            function bindImage(e) {
+                var file = e.originalEvent.target.files[0];
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function (evt) {
+                    var result = evt.target.result;
+                    $('#testImage').removeAttr('src');
+                    $('#testImage').attr('src', result);
+                }
+            }
+
+            $('#addBtn').on('click', function (e) {
+                e.preventDefault();
+                var img = new Image();
+                var firstName = $('#firstName').val();
+                var lastName = $('#lastName').val();
+                var city = $('#city').val();
+                var mobile = $('#mobile').val();
+                img.src = $('#holdImg').attr('src');
+                var image = img.src;
+                var transaction = db.transaction(["students"], "readwrite");
+
+                var objectStore = transaction.objectStore("students");
+                objectStore.add({ FirstName: firstName, LastName: lastName, City: city, Mobile: mobile, File: image });
+
+                transaction.oncomplete = function (event) {
+                    console.log("Success :)");
+                    $('#result').html("Add: Successfully");
+                };
+                transaction.onerror = function (event) {
+                    console.log("Error :)");
+                    $('#result').html("Add: Error occurs in inserting");
+                };
+                showAllDataMethod();
+                ClearTextBox();
+            });
+       
+            function showAllDataMethod() {
+                var request = db.transaction(["students"], "readonly").objectStore("students").getAll();
+                request.onsuccess = function (event) {
+                    var image = new Image();
+                    var record = event.target.result;
+                    console.log('get success', record);
+                    image.src = 'data:image/jpeg;base64,' + btoa(record.File);
+                    var obj = request.result
+                    var table = '<table class="table table-responsive table-bordered table-striped"><thead> <th>ID</th> <th>First Name</th> <th>Last Name</th>  <th>Email Address</th> <th>Mobile</th> <th>Image</th> </thead><tbody>';
+                    $.each(obj, function () {
+                        table += '<tr class="table-primary"><td>' + this['rollNo'] + '</td> <td>' + this['FirstName'] + '</td>  <td>' + this['LastName'] + '</td>  <td>' + this['City'] + '</td>  <td>' + this['Mobile'] + '</td> <td> <img width="80" height="80" src="' + this['File'] +'" /> + </td></tr>';
+                    });
+                    table += '</tbody></table>';
+                    $("#datalist").html(table);
+                };
+            }
+        });
+    </script>
+</body>
+</html>

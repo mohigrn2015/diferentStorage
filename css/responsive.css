@@ -1,0 +1,142 @@
+
+@media (min-width: 992px) {
+  .Appily_header .header_nav .Appily_header_menu ul li.nav-item li.nav-item {
+    padding-bottom: 40px;
+    margin-bottom: -40px;
+  }
+}
+
+/*================= end  @media (min-width: 992) ==================*/
+
+@media (max-width: 991px) {
+  .Appily_header_menu {
+    background: #fff;
+    padding: 0px 30px 0px 30px;
+  }
+  .Appily_header .header_nav .Appily_header_menu ul {
+    padding: 20px 0 15px;
+  }
+  .Appily_header .header_nav .Appily_header_menu ul.navbar-nav {
+    margin-bottom: 15px;
+    display: block;
+  }
+  .Appily_header .header_nav .Appily_header_menu ul li.nav-item {
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
+
+  .Appily_header .header_nav .Appily_header_menu ul li.nav-item a.nav-link {
+    color: #1b212f;
+  }
+
+  .Appily_header .header_nav .Appily_header_menu .GetNbtn {
+    margin-left: 0;
+  }
+  .Appily_header.Appily_header_transparent.fixedMenu .header_nav .GetNbtn {
+    margin-left: 0;
+  }
+  .Appily_header .header_nav .GetNbtn a.primary_Btn:hover {
+    color: #6934ff;
+    border: 1px solid #6934ff;
+}
+
+  .Appily_header .header_nav .Appily_header_menu .GetNbtn .get_btn {
+    position: static;
+    display: block;
+    margin-bottom: 15px;
+  }
+  .Appily_header {
+    padding: 15px 0;
+  }
+  .Appily_header.Appily_header_transparent.fixedMenu {
+    padding: 10px 0;
+  }
+  
+.primary_Btn {
+  padding: 9px 18px;
+  min-width: 145px;
+}
+.banner_Header .left_slide_content .secondary_Btn.slide_btn {
+  padding: 9px 30px;
+}
+
+}
+
+
+/*================= end  @media (max-width: 991px) ==================*/
+
+@media (max-width: 768px) {
+  .banner_Header .left_slide_content .banner_Pra.all_Pra {
+    margin-right: 0;
+    margin-bottom: 30px;
+}
+  .height_vh {
+    height: auto;
+}
+
+.Appily_footer_social {
+  position: absolute;
+  left: 0;
+  top: auto;
+  bottom: 20px;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  transform: none;
+}
+.Appily_footer_social ul li {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+.Appily_footer_social ul li:last-child {
+  margin-right: 0;
+}
+.primary_Btn {
+  padding: 7px 12px;
+  min-width: 135px;
+}
+.pri_cusmp {
+  margin-bottom: 8px;
+}
+.primary_Btn {
+  font-size: 12px;
+  font-weight: 700;}
+
+}
+
+
+/*================= end  @media (max-width: 768px) ==================*/
+
+
+@media (max-width: 767px) {
+  .banner_Header .left_slide_content .secondary_Btn.slide_btn {
+    margin-left: 10px;
+}
+.banner_Header .left_slide_content .banner_head_title {
+  font-size: 30px;
+  line-height: 35px;
+}
+
+}
+
+
+/*================= end  @media (max-width: 480px) ==================*/
+
+@media (max-width: 420px) {
+  .Appily_header_menu {
+    overflow-y: scroll;
+    max-height: 400px;
+  }
+
+}
+
+
+@media (max-width:350px) {
+  .primary_Btn.app_btn_primary {
+    margin-bottom: 15px;
+}
+.banner_Header .left_slide_content .secondary_Btn.slide_btn {
+  margin-left: 0;
+}
+}

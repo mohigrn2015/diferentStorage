@@ -1,0 +1,81 @@
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+/* Reset css*/
+.navbar {
+    border-radius: 0 !important;
+}
+
+/*Reset css*/
+
+.proField-list {
+	display:table;
+	width:100%;
+	list-style-type:none;
+}
+.proField-list li {
+	float:left;
+}
+.proField-list li:first-child {
+	width:30%;
+}
+.proField-list li:last-child {
+	width:70%;
+}
+.displayImg img{
+	width:80px;
+}
+.productAdd-box {
+    background: #a3f4e0;
+    display: table;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+}
+.show-image {
+	
+}
+#productTable td {
+    vertical-align: middle !important;
+}
+.getImage-box {
+    position: relative;
+    overflow: hidden;
+    margin-top: 15px;
+	padding:5px;
+}
+.getImage-box input {
+	opacity:0;
+}
+.getImg-status {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    background: #286090;
+    border-radius: 2px;
+    color: #ffffff;
+	line-height:32px;
+    pointer-events: none;
+}
+.edit {
+    display: block;
+    text-align: center;
+    font-size: 23px;
+    color: #5bb95b;
+}
+.delete {
+    display: block;
+    text-align: center;
+    font-size: 23px;
+    color: #d9534f;
+}
+
+.navbar-inverse {
+    background-color: #0bd1a1;
+    border: 0px solid;
+}
